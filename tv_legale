@@ -19,9 +19,6 @@ http://live1.msf.ticdn.it/Content/HLS/Live/Channel(CH03HA)/Stream(04)/index.m3u8
 #EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="005.png",Canale 5
 https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(c5)/index.m3u8
 
-#EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="318.png",Canale 5 HD
-http://live1.msf.ticdn.it/Content/HLS/Live/Channel(CH01HA)/Stream(04)/index.m3u8
-
 #EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="006.png",Italia 1
 https://live3-mediaset-it.akamaized.net/content/hls_clr_xo/live/channel(ch02)/index.m3u8
 
