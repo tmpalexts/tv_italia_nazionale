@@ -1,6 +1,5 @@
 #EXTM3U
-#EXTINF:-1 group-title="CREDITS" tvg-logo="000.png",[COLOR blue][B]Infogw[/B] • [B]06/04/2018[/B] 21:59h[/COLOR]
-https://dl.dropbox.com/s/x0p9zhh5bk5dr69/INFORMATIC%20GLOBAL%20WORLD-INTRO.mp4
+
 
 #EXTINF:-1 tvg-id="" group-title="RAI" tvg-logo="001.png",Rai 1
 http://mediapolisevent.rai.it/relinker/relinkerServlet.htm?cont=2606803
