@@ -2,28 +2,22 @@
 
 
 #EXTINF:-1 tvg-id="" group-title="RAI" tvg-logo="001.png",Rai 1
-http://mediapolisevent.rai.it/relinker/relinkerServlet.htm?cont=2606803
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=2606803
 
 #EXTINF:-1 tvg-id="" group-title="RAI" tvg-logo="002.png",Rai 2
-http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=180116
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308718
 
 #EXTINF:-1 tvg-id="" group-title="RAI" tvg-logo="003.png",Rai 3
-http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=180117
+https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308709
 
 #EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="004.png",Rete 4
-https://live1-mediaset-it.akamaized.net/content/hls_clr_xo/live/channel(ch03)/index.m3u8
-
-#EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="317.png",Rete 4 HD
-http://live1.msf.ticdn.it/Content/HLS/Live/Channel(CH03HA)/Stream(04)/index.m3u8
+https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(r4)/index.m3u8
 
 #EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="005.png",Canale 5
 https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(c5)/index.m3u8
 
 #EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="006.png",Italia 1
-https://live3-mediaset-it.akamaized.net/content/hls_clr_xo/live/channel(ch02)/index.m3u8
-
-#EXTINF:-1 tvg-id="" group-title="MEDIASET" tvg-logo="319.png",Italia 1 HD
-http://live1.msf.ticdn.it/Content/HLS/Live/Channel(CH02HA)/Stream(04)/index.m3u8
+https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(i1)/index.m3u8
 
 #EXTINF:-1 tvg-id="" group-title="VARI" tvg-logo="007.png",La7
 http://la7livehls-lh.akamaihd.net/i/livebkup_1@372883/index_1_av-b.m3u8
