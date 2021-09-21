@@ -19,7 +19,11 @@ https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(c5)/
 https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(i1)/index.m3u8
 
 #EXTINF:-1 tvg-id="" group-title="VARI" tvg-logo="007.png",La7
-http://la7livehls-lh.akamaihd.net/i/livebkup_1@372883/index_1_av-b.m3u8
+https://stream.la7.it/out/v1/fe849af8150c4c51889b15dadc717774/index.m3u8
+
+#EXTINF:-1 tvg-id="" group-title="VARI" tvg-logo="007.png",La7
+https://www.mytivu.it/Application/Channels/La7.php
+
 
 #EXTINF:-1 tvg-id="" group-title="RAI" tvg-logo="015.png",Rai 4
 http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=746966
