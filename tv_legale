@@ -3,7 +3,9 @@
 # Tutti i link sono stati verificati il 17/08/2026 da una connessione FUORI dall'Italia.
 # Fonti ufficiali: app/siti RaiPlay, distribuzione internazionale Rai/Mediaset
 # (feed per gli italiani all'estero), la7.it, discovery+ (Warner Bros. Discovery),
-# tv2000.it, euronews.com, rtl.it, radioitalia.it, rds.it, kisskiss.it, ecc.
+# tv2000.it, euronews.com, rtl.it, radioitalia.it, rds.it, kisskiss.it,
+# telenorba.it, telesveva.com, antennasud.it, ilsole24ore.com, sportitalia.com,
+# supertennis.tv, qvc.it, padrepiotv.it, ecc.
 # Nessun canale pirata, a pagamento o protetto da DRM.
 # Nota: i canali Rai/Mediaset nazionali (Rai 1-3, Canale 5, ecc.) sono geo-bloccati
 # fuori dall'Italia; le versioni internazionali ufficiali sono incluse qui sotto.
@@ -84,9 +86,17 @@ https://vimnitaly.akamaized.net/hls/live/2094034/super/master.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/euronews-it.m3u8
 
+#EXTINF:-1 tvg-id="CusanoItaliaTV.it" group-title="Notizie",Cusano Italia TV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://router.xdevel.com/video0s975363-69/stream/playlist.m3u8
+
 #EXTINF:-1 tvg-id="Sportitalia.it" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/sportitalia.png" group-title="Sport",Sportitalia
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8
+
+#EXTINF:-1 tvg-id="SportitaliaSolocalcio.it" group-title="Sport",Sportitalia Solocalcio
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://edge-001.streamup.eu/sportitalia/sisolocalcio_abr/playlist.m3u8
 
 #EXTINF:-1 tvg-id="SuperTennis.it" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/supertennis.png" group-title="Sport",SuperTennis
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
@@ -128,6 +138,18 @@ https://kk.fluid.stream/KKMulti/smil:KissKissTV.smil/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 https://stream.rdstv.radio/index.m3u8
 
+#EXTINF:-1 tvg-id="RadioBirikinaTV.it" group-title="Radio TV",Radio Birikina TV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://56b50ada2d659.streamlock.net/RadioBirikinaTV/livestream/playlist.m3u8
+
+#EXTINF:-1 tvg-id="RadioPiterPanTV.it" group-title="Radio TV",Radio Piter Pan TV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://58d921499d3d3.streamlock.net/RadioPiterpanTV/livestream/playlist.m3u8
+
+#EXTINF:-1 tvg-id="RadioStudioDeltaTV.it" group-title="Radio TV",Radio Studio Delta TV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://5ce9406b73c33.streamlock.net/RSD/ngrp:livestream_all/playlist.m3u8
+
 #EXTINF:-1 tvg-id="TV2000.it" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/tv2000.png" group-title="Altro",TV2000
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 https://hls-live-tv2000.akamaized.net/hls/live/2028510/tv2000/master.m3u8
@@ -139,3 +161,57 @@ https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/master.m3u8
 #EXTINF:-1 tvg-id="PadrePioTV.it" tvg-logo="https://cdn.jsdelivr.net/gh/Tundrak/IPTV-Italia/logos/padrepiotv.png" group-title="Altro",Padre Pio TV
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 https://600f07e114306.streamlock.net/PadrePioTV/livestream/playlist.m3u8
+
+# ============ CANALI REGIONALI E LOCALI IN CHIARO (visibili dall'estero) ============
+
+#EXTINF:-1 tvg-id="Telenorba.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/10-telenorba.png" group-title="Canali regionali",Telenorba (Puglia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://live-telenorba.cdn.netrw.it/telenorba/hls/ccr/telenorba/master.m3u8
+
+#EXTINF:-1 tvg-id="TGNorba24.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/13-tgnorba24.png" group-title="Canali regionali",TG Norba 24 (Puglia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://live-telenorba.cdn.netrw.it/telenorba/hls/ccr/tgnorba/master.m3u8
+
+#EXTINF:-1 tvg-id="AntennaSud.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/14-antennasud.png" group-title="Canali regionali",Antenna Sud (Puglia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://live-antennasud.cdn.netrw.it/antennasud/hls/ccr/antennasud/master.m3u8
+
+#EXTINF:-1 tvg-id="Telesveva.it" group-title="Canali regionali",Telesveva (Puglia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://live2.telesveva.com/hls/svevahd.m3u8
+
+#EXTINF:-1 tvg-id="RadionorbaTV.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/11-radionorbatv.png" group-title="Canali regionali",Radio Norba TV (Puglia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://stream12.xdevel.com/video0s975885-2349/stream/playlist_dvr.m3u8
+
+#EXTINF:-1 tvg-id="Canale63.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/63-cs24.png" group-title="Canali regionali",Canale 63 (Il Sole 24 Ore)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://ilsole24ore-radiovisual.akamaized.net/hls/live/2035302/persidera/master-3500.m3u8
+
+#EXTINF:-1 tvg-id="Italia53.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/53-italia53.png" group-title="Canali regionali",Italia 53 (Lombardia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://liveac115b.b-cdn.net/canale3.smil/chunklist_b1100000.m3u8
+
+#EXTINF:-1 tvg-id="AlmaTV.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/65-almatv.png" group-title="Canali regionali",Alma TV (Lombardia)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://streaming.softwarecreation.it/AlmaTv/AlmaTv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="il61.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/61-il61.png" group-title="Canali regionali",il61 (Campania)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://5a1178b42cc03.streamlock.net/travel/travel/chunklist_w2126077193.m3u8
+
+#EXTINF:-1 tvg-id="CafeTV24.it" group-title="Canali regionali",CafèTV24 (Veneto)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://srvx1.selftv.video/cafe/live/playlist.m3u8
+
+#EXTINF:-1 tvg-id="MadeinBOTV.it" group-title="Canali regionali",MadeinBO TV (Emilia-Romagna)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://srvx1.selftv.video/dmchannel/live/playlist.m3u8
+
+#EXTINF:-1 tvg-id="FIFA+.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/102-fifa.png" group-title="Canali FAST ufficiali",FIFA+ (calcio)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://5d95f7d7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWl0X0ZJRkFQbHVzSXRhbGlhbl9ITFM/playlist.m3u8
+
+#EXTINF:-1 tvg-id="ACISportTV.it" tvg-logo="https://raw.githubusercontent.com/xN1ckuz/OpenIPTVItaly/refs/heads/main/Logos/402-acisporttvhd.png" group-title="Canali FAST ufficiali",ACI Sport TV (motori)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8_output_0.m3u8

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV Italia — Player legale</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#e6edf3; --muted:#8b949e; --accent:#2f81f7; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); height:100vh; display:flex; flex-direction:column; }
+  header { padding:10px 16px; background:var(--panel); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  header h1 { font-size:18px; font-weight:600; }
+  header .sub { color:var(--muted); font-size:12px; }
+  header select { background:#21262d; color:var(--text); border:1px solid var(--border); border-radius:6px; padding:6px 8px; font-size:13px; }
+  #main { display:flex; flex:1; min-height:0; }
+  #sidebar { width:300px; min-width:220px; background:var(--panel); border-right:1px solid var(--border); overflow-y:auto; padding:8px; }
+  #sidebar .group { margin-bottom:6px; }
+  #sidebar .gtitle { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:8px 8px 4px; }
+  #sidebar .ch { display:flex; align-items:center; gap:8px; padding:7px 8px; border-radius:6px; cursor:pointer; font-size:13.5px; }
+  #sidebar .ch:hover { background:#21262d; }
+  #sidebar .ch.active { background:var(--accent); color:#fff; }
+  #sidebar .ch img { width:22px; height:22px; object-fit:contain; flex:none; }
+  #player-wrap { flex:1; display:flex; flex-direction:column; min-width:0; background:#000; }
+  #video { width:100%; flex:1; min-height:0; background:#000; }
+  #info { padding:10px 16px; background:var(--panel); border-top:1px solid var(--border); font-size:13px; }
+  #info .name { font-weight:600; }
+  #info .hint { color:var(--muted); font-size:12px; margin-top:2px; }
+  #status { color:var(--muted); font-size:12px; }
+  @media (max-width:768px){ #main{flex-direction:column;} #sidebar{width:100%; max-height:40%; border-right:none; border-bottom:1px solid var(--border);} }
+</style>
+</head>
+<body>
+<header>
+  <h1>📺 TV Italia <span class="sub">player legale — solo stream ufficiali</span></h1>
+  <select id="listSel" title="Scegli la playlist">
+    <option value="tv_legale">Dall'estero (tv_legale)</option>
+    <option value="tv_italia_solo_italia.m3u8">Solo Italia (geo-bloccati)</option>
+  </select>
+</header>
+<div id="main">
+  <div id="sidebar"></div>
+  <div id="player-wrap">
+    <video id="video" controls autoplay playsinline></video>
+    <div id="info">
+      <div class="name" id="curName">Seleziona un canale a sinistra</div>
+      <div id="status">Caricamento playlist…</div>
+      <div class="hint">Se un canale non parte, aprilo con VLC: <span id="curUrl" style="word-break:break-all; color:var(--accent);"></span></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
+<script>
+const video = document.getElementById('video');
+const sidebar = document.getElementById('sidebar');
+const statusEl = document.getElementById('status');
+const curName = document.getElementById('curName');
+const curUrl = document.getElementById('curUrl');
+const listSel = document.getElementById('listSel');
+let channels = []; // {name, group, logo, url}
+let active = null;
+
+async function load(listFile) {
+  statusEl.textContent = 'Caricamento playlist…';
+  const res = await fetch(listFile);
+  const text = await res.text();
+  channels = [];
+  let cur = null;
+  for (const line of text.split(/\r?\n/)) {
+    if (line.startsWith('#EXTINF')) {
+      const name = line.slice(line.lastIndexOf(',') + 1).trim();
+      const gm = line.match(/group-title="([^"]*)"/);
+      const lm = line.match(/tvg-logo="([^"]*)"/);
+      cur = { name, group: gm ? gm[1] : 'Altro', logo: lm ? lm[1] : '', url: '' };
+    } else if (line.startsWith('http') && cur) {
+      cur.url = line.trim();
+      channels.push(cur);
+      cur = null;
+    }
+  }
+  render();
+  statusEl.textContent = channels.length + ' canali caricati';
+  if (channels.length) play(channels[0]);
+}
+
+function render() {
+  sidebar.innerHTML = '';
+  const groups = {};
+  for (const c of channels) (groups[c.group] = groups[c.group] || []).push(c);
+  for (const g of Object.keys(groups)) {
+    const div = document.createElement('div');
+    div.className = 'group';
+    const t = document.createElement('div');
+    t.className = 'gtitle'; t.textContent = g;
+    div.appendChild(t);
+    for (const c of groups[g]) {
+      const el = document.createElement('div');
+      el.className = 'ch';
+      el.innerHTML = (c.logo ? `<img src="${c.logo}" loading="lazy" onerror="this.remove()">` : '') + `<span>${c.name}</span>`;
+      el.onclick = () => play(c, el);
+      el.dataset.name = c.name;
+      div.appendChild(el);
+    }
+    sidebar.appendChild(div);
+  }
+}
+
+function play(c, el) {
+  active = c;
+  document.querySelectorAll('.ch').forEach(x => x.classList.toggle('active', x.dataset.name === c.name));
+  curName.textContent = c.name;
+  curUrl.textContent = c.url;
+  statusEl.textContent = 'Avvio…';
+  video.src = '';
+  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = c.url; // Safari / iOS: HLS nativo
+    video.play().catch(() => {});
+    statusEl.textContent = 'Riproduzione (HLS nativo)';
+  } else if (window.Hls && Hls.isSupported()) {
+    const hls = new Hls({ enableWorker: true });
+    hls.loadSource(c.url);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => { video.play().catch(() => {}); statusEl.textContent = 'Riproduzione (hls.js)'; });
+    hls.on(Hls.Events.ERROR, (e, data) => {
+      if (data.fatal) {
+        statusEl.textContent = 'Errore: il server potrebbe bloccare il browser (CORS/geo). Usa VLC con l\'URL qui sotto.';
+      }
+    });
+  } else {
+    statusEl.textContent = 'Browser non compatibile con HLS — usa VLC con l\'URL qui sotto.';
+  }
+}
+
+listSel.addEventListener('change', () => load(listSel.value));
+load(listSel.value);
+</script>
+</body>
+</html>
