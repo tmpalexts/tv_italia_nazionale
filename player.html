@@ -33,8 +33,8 @@
 <header>
   <h1>📺 TV Italia <span class="sub">player legale — solo stream ufficiali</span></h1>
   <select id="listSel" title="Scegli la playlist">
-    <option value="tv_legale">Dall'estero (tv_legale)</option>
-    <option value="tv_italia_solo_italia.m3u8">Solo Italia (geo-bloccati)</option>
+    <option value="https://raw.githubusercontent.com/tmpalexts/tv_italia_nazionale/arena/01a00fe6-tv-italia-nazionale/tv_legale">Dall'estero (tv_legale — 51 canali)</option>
+    <option value="https://raw.githubusercontent.com/tmpalexts/tv_italia_nazionale/arena/01a00fe6-tv-italia-nazionale/tv_italia_solo_italia.m3u8">Solo Italia (geo-bloccati)</option>
   </select>
 </header>
 <div id="main">
@@ -132,7 +132,14 @@ function play(c, el) {
 }
 
 listSel.addEventListener('change', () => load(listSel.value));
-load(listSel.value);
+const qs = new URLSearchParams(location.search);
+const custom = qs.get('list');
+if (custom) {
+  listSel.insertAdjacentHTML('afterbegin', `<option value="${custom}" selected>Playlist personalizzata</option>`);
+  load(custom);
+} else {
+  load(listSel.value);
+}
 </script>
 </body>
 </html>
